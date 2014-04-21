@@ -1,7 +1,10 @@
 class TeamsController < ApplicationController
   def new
     @team = Team.new
-    #@users = User.all
+  end
+
+  def index
+    @teams = Team.paginate(page: params[:page])
   end
 
   def show
