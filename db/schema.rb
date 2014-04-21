@@ -27,4 +27,14 @@ ActiveRecord::Schema.define(version: 20140421025123) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+ActiveRecord::Schema.define(version: 20140421023119) do
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "id_leader"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
