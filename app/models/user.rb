@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :team
   belongs_to :position
-  validates :team_id, presence: true
-  validates :position_id, presence: true
   before_save { self.email = email.downcase }
 
   attr_accessor :not_validate_password
