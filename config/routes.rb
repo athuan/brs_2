@@ -1,5 +1,7 @@
 Brs2::Application.routes.draw do
-  resources :users
+  resources :users do
+    collection { post :import }
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :positions
   resources :teams

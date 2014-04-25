@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-  	@user = User.find params[:id]
+    @user = User.find params[:id]
   end
 
   def new
@@ -36,12 +36,22 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate page: params[:page]
+    @users_csv = User.order(:name)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users_csv.to_csv }
+    end
   end
 
   def destroy
     User.find (params[:id]).destroy
     flash[:success] = "User deleted."
     redirect_to users_url
+  end
+
+  def import
+    User.import params[:file]
+    redirect_to users_url, notice: "Products imported."
   end
 
   private

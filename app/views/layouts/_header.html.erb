@@ -21,20 +21,32 @@
                   <li><%= link_to "Create Skill", new_skill_path %></li>
                 </ul>
               </li>
-            <% else %>
-              <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  View <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Projects", projects_path %></li>
-                  <li><%= link_to "Teams", teams_path %></li>
-                  <li><%= link_to "Users", users_path %></li>
-                  <li><%= link_to "Positions", positions_path %></li>
-                  <li><%= link_to "Skills", skills_path %></li>
-                </ul>
-              </li>
             <% end %>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Export <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Export Users", users_path(format: "csv") %></li>
+                <li><%= link_to "Export Teams", "#" %></li>
+                <li><%= link_to "Export Projects", "#" %></li>
+                <li><%= link_to "Export Skills", "#" %></li>
+                <li><%= link_to "Export Positions", "#" %></li>
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                View <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Projects", projects_path %></li>
+                <li><%= link_to "Teams", teams_path %></li>
+                <li><%= link_to "Users", users_path %></li>
+                <li><%= link_to "Positions", positions_path %></li>
+                <li><%= link_to "Skills", skills_path %></li>
+              </ul>
+            </li>
               <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
