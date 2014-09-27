@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.paginate page: params[:page]
     @q = User.search params[:q]
-    @users = @q.result(distinct: true).page(params[:page])
+    @users = @q.result(distinct: true).order(:id).page(params[:page])
   end
 
   def create
