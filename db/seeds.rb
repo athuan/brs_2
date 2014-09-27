@@ -1,10 +1,10 @@
 (1..100).each do |i| 
-  User.create(name: "User#{i}", birthday: "21/4/2014", email: "user#{i}@example.com", 
+  User.create(name: "User#{i}", birthday: "#{(i%25)+1}/#{(i%12)+1}/2014", email: "user#{i}@example.com", 
   password: "foobar", password_confirmation: "foobar", role: '0', team_id: i, position_id: '6')
 end
 
 (1..3).each do |i| 
-  User.create(name: "Admin#{i}", birthday: "21/4/2014", email: "admin#{i}@example.com", 
+  User.create(name: "Admin#{i}", birthday: "21/#{i}/2014", email: "admin#{i}@example.com", 
   password: "foobar", password_confirmation: "foobar", role: '1', team_id: i, position_id: '6')
 end
 
