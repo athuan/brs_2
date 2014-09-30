@@ -22,9 +22,16 @@ class UsersController < ApplicationController
   end
 
   def index
-    # @users = User.paginate page: params[:page]
     @q = User.search params[:q]
     @users = @q.result(distinct: true).order(:id).page(params[:page])
+    @users = @q.result(distinct: true).page(params[:page])
+    data = User.all.pluck(:name)+User.all.pluck(:email)
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: data
+      }
+    end
   end
 
   def create

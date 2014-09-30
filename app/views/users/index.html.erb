@@ -3,10 +3,10 @@
 <h1>All members</h1>
 <div class="row">
   <div class="span4">
-    <div class="div_search">
+    <div class="div_search" >
       <%= search_form_for @q do |f| %>
         <%= f.label :name_or_email_cont %>
-        <%= f.search_field :name_or_email_cont, placeholder: "Input keywords to search" %>
+          <%= f.text_field :name_or_email_cont, placeholder: "Input keywords to search" %>
         <%= f.submit %>
       <% end %>
     </div>
